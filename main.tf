@@ -51,7 +51,7 @@ resource "aws_lambda_function" "test_lambda" {
 }
 
 #DynamoDB
-resource "aws_dynamodb_table" "basic-dynamodb-table" {
+resource "aws_dynamodb_table" "table" {
   name           = "GameScores"
   billing_mode   = "PROVISIONED"
   read_capacity  = 20
@@ -65,28 +65,31 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
   }
 
   attribute {
-    name = "GameTitle"
+    name = "contactName"
     type = "S"
   }
 
   attribute {
-    name = "TopScore"
-    type = "N"
+    name = "contactEmail"
+    type = "S"
   }
+
+  attribute {
+    name = "contactSubject"
+    type = "S"
+  }
+
+
+    attribute {
+    name = "contactMessage"
+    type = "S"
+  }
+
 
   ttl {
     attribute_name = "TimeToExist"
     enabled        = false
   }
 
-  global_secondary_index {
-    name               = "GameTitleIndex"
-    hash_key           = "GameTitle"
-    range_key          = "TopScore"
-    write_capacity     = 10
-    read_capacity      = 10
-    projection_type    = "INCLUDE"
-    non_key_attributes = ["UserId"]
-  }
 
 }
