@@ -46,8 +46,8 @@ variable "lambda-runtime" {
 
 #DB Name
 
-variable "db-name" {
- description = "Lambda runtime "
- type        = string
- default     = "portfolio-api"
-}
+# variable "db-name" {
+#  description = "DB Name"
+#  type        = string
+#  default     = "portfolio-api"
+# }
