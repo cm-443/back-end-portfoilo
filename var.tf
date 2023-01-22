@@ -6,49 +6,47 @@ variable "api-name" {
  default     = "portfolio-api"
 }
 
-###############################################
-
-#name = "iam_for_lambda"
-variable "api-name" {
- description = "API name"
+##################################################
+#S3 bucket for lambda
+variable "bucket-name" {
+ description = "S3 for lambda"
  type        = string
- default     = "portfolio-api"
+ default     = "lambda-functions-cm443"
 }
 
-#Lambda name
+#S3 bucket key for lambda 
+variable "bucket-key" {
+ description = "S3 key for lambda"
+ type        = string
+ default     = "main.zip"
+}
+
+#Lambda function name
 variable "lambda-name" {
  description = "Name of lambda function"
  type        = string
  default     = "portfolio-api"
 }
 
-#Lambda file .zip
-variable "api-name" {
- description = "API name"
+#Lambda handler name 
+variable "handler" {
+ description = "handler name"
  type        = string
- default     = "portfolio-api"
+ default     = "main.lambda_handler"
 }
 
-#handler       = "index.test"
-
-variable "api-name" {
- description = "API name"
- type        = string
- default     = "portfolio-api"
-}
-
-# runtime = "nodejs16.x"
+#Lambda runtime
 variable "lambda-runtime" {
- description = "Lambda runtime "
+ description = "Lambda runtime"
  type        = string
- default     = "portfolio-api"
+ default     = "python3.9"
 }
 
 ################################################
 
 #DB Name
 
-variable "lambda-runtime" {
+variable "db-name" {
  description = "Lambda runtime "
  type        = string
  default     = "portfolio-api"
