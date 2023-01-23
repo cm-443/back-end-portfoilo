@@ -1,2 +1,1 @@
-# back-end-portfoilo
-Back end repo for portfolio
+This repo contains terraform to create a lambda function, lambda role, api gateway, and dynamodb for the portfolio’s back-end. Keeping reusability in mind, the variable file allows customization of names, regions, and settings.
